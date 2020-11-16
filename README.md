@@ -1,2 +1,2 @@
 # Python_lectures_ism
-Collection of notebooks with python lessons and tutorilas
+Collection of notebooks with python lessons and tutorials
