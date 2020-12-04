@@ -1,0 +1,115 @@
+\documentclass[addpoints]{exam}
+
+\newenvironment{palatino}{\fontfamily{ppl}\selectfont}{\par}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}% Include figure files
+\usepackage{comment}
+\usepackage{multicol}
+\usepackage{placeins}
+\usepackage{amsmath,amssymb,amsthm,mathrsfs,amsfonts,dsfont} 
+\usepackage{hyperref}
+%
+\addtolength{\topmargin}{-1cm}
+	\addtolength{\textheight}{2cm}
+	\pagestyle{empty}
+\begin{document}
+\begin{palatino}
+
+%\maketitle
+%\pagenumbering{gobble}
+\noindent Corso di python novembre-dicembre 2020 - ISM \\
+\noindent Fulvio Paleari -- fulvio.paleari@mlib.ism.cnr
+
+\hrulefill
+%\centering
+\vspace{0.2in}\\
+\setlength{\parindent}{0pt}
+
+\textbf{1. Introduzione a python I} \\
+
+a. \quad Utilizzando \texttt{numpy}, generate una matrice $3\times 3$ contentente elementi casuali compresi fra $-1$ e $1$ e trovatene il determinante utilizzando la regola di Sarruss. Fate una funzione per generare la matrice e un'altra per il calcolo del determinante. Controllate il risultato utilizzando il metodo di \texttt{numpy} per trovare il determinante di una matrice.
+
+\hphantom{ciao}
+
+b. Considerando la matrice $3\times 3$ costruita precedentemente, calcolatene autovalori e autovettori con gli opportuni metodi \texttt{numpy}, dopodiché visualizzatene lo spettro usando \texttt{matplotlib.pyplot} secondo la seguente formula:
+\begin{equation*}
+	S(\omega)= \mathrm{Im}\left\{\sum_{i=1}^3 \frac{|\mathbf{e}_i|^2}{\omega-E_i-\mathrm{i}\eta} \right\},
+\end{equation*} 
+dove $\mathbf{e}_i$ è un autovettore e $E_i$ il corrispondente autovalore della matrice $3\times 3$, mentre $\eta>0$ rappresenta un parametro di \textit{linewidth} (molto piccolo rispetto alla scala di $\omega$ considerata) introdotto \textit{ad hoc}.
+
+\hphantom{ciao}
+
+c. \quad La sequenza di Fibonacci è definita dalla seguente realazione ricorsiva:
+
+\begin{equation*}
+	F_n = F_{n-1}+F_{n-2} \qquad \mathrm{con} \ F_1 = 1 \ e \ F_2 = 1.
+\end{equation*}
+
+Quindi i primi $12$ termini saranno:
+
+\begin{equation*}
+	F_1 = 1, \
+	F_2 = 1, \
+	F_3 = 2, \
+	F_4 = 3, \
+	F_5 = 5, \
+	F_6 = 8, \
+	F_7 = 13, \
+	F_8 = 21, \
+	F_9 = 34, \
+	F_{10} = 55, \
+	F_{11} = 89, \
+	F_{12} = 144.
+\end{equation*}
+
+Il dodicesimo termine, $F_{12}$, è il primo termine formato da tre cifre.
+
+Qual è l'indice del primo termine della sequenza di Fibonacci formato da $10$ cifre? 
+Potete usare funzioni, cicli \texttt{for}, \texttt{if} e \texttt{numpy} array.
+
+\hphantom{ciao}
+
+[Questa è una versione del problema $25$ di \href{https://projecteuler.net/problem=25}{Project Euler}]
+
+\hphantom{ciao}
+ 
+d. \quad 	
+
+\hphantom{ciao}
+	
+\textbf{3. Visualizzazione dati} \\
+
+\hphantom{ciao}
+
+
+\textbf{4. Analisi dati} \\
+
+
+\hphantom{ciao}
+
+\textbf{5. Programmazione orientata ad oggetti}
+
+\hphantom{ciao}
+
+a. \quad È possibile stimare il valore di $\pi$ attraverso una simulazione MonteCarlo.
+Per farlo si campiona l'area di un quadrato di lato uguale a 2, ovvero si estraggono attraverso un generatore di numeri random coppie $(x,y)$ di numeri nell'intervallo $[-1,1]$.
+Per ogni coppia estratta si controlla se il punto è interno a un cerchio di raggio $1$, ovvero si verifica che $x^2+y^2 <= 1$. 
+Il rapporto fra il numero di punti interni al cerchio e il numero totale di punti tende al valore $\pi/4$ al crescere del numero di campionamenti.
+
+\hphantom{ciao}
+
+Realizzate una classe python che gestisca questa simulazione. 
+La classe richiede il numero di campionamenti come parametro da passare al costruttore (metodo \texttt{\_\_init\_\_}) e definisce un metodo \texttt{run} che esegue la simulazione. 
+Oltre al valore finale il metodo deve produrre il plot di convergenza, ovvero il plot del valore del rapporto durante la simulazione. 
+A questo scopo è necessario definire come membro della classe una lista, o un array \texttt{numpy}, che contenga i valori del rapporto punti interni / punti totali durante la simulazione.
+
+\hphantom{ciao}
+
+[Esercizio proposto da Marco D'Alessandro]
+
+\FloatBarrier
+
+\end{palatino}
+\end{document}
