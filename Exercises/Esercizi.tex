@@ -9,7 +9,7 @@
 \usepackage{multicol}
 \usepackage{placeins}
 \usepackage{amsmath,amssymb,amsthm,mathrsfs,amsfonts,dsfont} 
-\usepackage{hyperref}
+\usepackage[colorlinks=true]{hyperref}
 %
 \addtolength{\topmargin}{-1cm}
 	\addtolength{\textheight}{2cm}
@@ -27,7 +27,7 @@
 \vspace{0.2in}\\
 \setlength{\parindent}{0pt}
 
-\textbf{1. Introduzione a python I} \\
+\textbf{1. Introduzione a python} \\
 
 a. \quad Utilizzando \texttt{numpy}, generate una matrice $3\times 3$ contentente elementi casuali compresi fra $-1$ e $1$ e trovatene il determinante utilizzando la regola di Sarruss. Fate una funzione per generare la matrice e un'altra per il calcolo del determinante. Controllate il risultato utilizzando il metodo di \texttt{numpy} per trovare il determinante di una matrice.
 
@@ -41,7 +41,7 @@ dove $\mathbf{e}_i$ è un autovettore e $E_i$ il corrispondente autovalore della
 
 \hphantom{ciao}
 
-c. \quad La sequenza di Fibonacci è definita dalla seguente realazione ricorsiva:
+c. \quad La sequenza di Fibonacci è definita dalla seguente relazione ricorsiva:
 
 \begin{equation*}
 	F_n = F_{n-1}+F_{n-2} \qquad \mathrm{con} \ F_1 = 1 \ e \ F_2 = 1.
@@ -75,7 +75,7 @@ Potete usare funzioni, cicli \texttt{for}, \texttt{if} e \texttt{numpy} array.
 
 \hphantom{ciao}
  
-d. \quad 	
+d. \quad Utilizzate \texttt{numpy.loadtxt} per caricare il file \texttt{testo.dat} (fornendo il corretto \textit{keyword argument} per far funzionare \texttt{loadtxt} con caratteri invece che con numeri). A questo punto, costruite una funzione che conti quante vocali sono presenti nel testo, sia in totale ($N_{tot}$), sia per singola vocale ($N_a$, $N_e$, $N_i$, ...). Rappresentate i risultati (es. $N_a/N_{tot}$,...) in un istogramma.
 
 \hphantom{ciao}
 	
@@ -83,9 +83,46 @@ d. \quad
 
 \hphantom{ciao}
 
+a. Costruite una funzione $y=\mathrm{sin}(s_i*\varphi)$ nel dominio $\varphi \in [0,2\pi]$ dove gli $s_i$ sono i fattori di scala seguenti: $s=\{1,2,3,4,5\}$. Fate il plot della funzione al variare dei fattori di scala, e personalizzatelo definendo limiti, nomi e valori degli assi, colori, tipi di linea, etc.
+Ripetete l'esercizio, ma questa volta facendo i plot in coordinate polari utilizzando le opzioni messe a disposizione da \texttt{pyplot}. 
+
+\hphantom{ciao}
+
+b. \quad Fate il plot di una distribuzione gaussiana normalizzata $G(x;\mu,\sigma)$ con media $\mu=3$ e deviazione standard $\sigma=0.25$. Usate \texttt{numpy} o \texttt{scipy} oppure costruite una vostra funzione.
+Valutate il punto $x$ in cui l'integrale a partire da $-\infty$ è pari a $0.7$, cioè:
+\begin{equation*}
+	x \ \mathrm{t.c.} \ \int_{-\infty}^x \mathrm{d}x^\prime \ G(x^\prime; \mu,\sigma)=0.7,
+\end{equation*}
+e colorate l'area corrispondente.
+
+\hphantom{ciao}
+
+[Esercizio preso dalle lezioni di python tenute all'Università di Milano-Bicocca da Matteo Bonetti]
+
+\hphantom{ciao}
 
 \textbf{4. Analisi dati} \\
 
+\hphantom{ciao}
+
+a. \quad Il governo pubblica quotidianamente i dati relativi all'andamento nazionale dell'epidemia da COVID-19 in un repository github pubblicamente accessibile. I dati sono in formato \texttt{csv} e sono accessibili a \href{https://github.com/pcm-dpc/COVID-19/blob/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv}{questo indirizzo}. 
+
+Scaricate il database \texttt{dpc-covid19-ita-andamento-nazione.csv} dal sito (potete cliccare sul tasto \texttt{Raw}, che vi porta ad una pagina web contenente unicamente i dati non formattati, copiarne l'indirizzo e da terminale digitare \texttt{wget indirizzo/pagina/web} per ottenere il database).
+
+A questo punto, aprite il database in python utilizzando \texttt{pandas}, e producete un plot dell'andamento della variabile \texttt{totale\_positivi} dal 24 febbraio (data di inizio presa dati) ad oggi. 
+
+Se volete, sperimentate con \texttt{pandas} e \texttt{pyplot} per ottenere altri plot ed abbozzare un'analisi dei dati.
+
+\hphantom{ciao}
+
+b. Supponiamo di aver fatto delle misure in funzione del tempo per un certo fenomeno, e supponiamo di sapere che la legge fisica che governa questo fenomeno è quella di un oscillatore smorzato:
+\begin{equation*}
+	F(t)=I_0 \mathrm{e}^{-\gamma t} \mathrm{cos}(\Omega t +\varphi)+ C
+\end{equation*}
+
+Considerate il file \texttt{damped\_osc\_low\_noise.dat}. Questo contiene due colonne: la prima è il tempo, la seconda il valore di $F(t)$ misurato sperimentalmente. Caricatelo con \texttt{numpy.loadtxt} ed eseguite -- utilizzando \texttt{scipy} -- il fit dei dati secondo la funzione indicata. Stimate i valori del fattore di smorzamento $\gamma$ e della frequenza di risonanza $\Omega$ e fate un plot dei risultati sperimentali e del fit.
+
+Considerate ora i file \texttt{damped\_osc\_high\_noise.dat} e \texttt{damped\_osc\_very\_high\_noise.dat}. Questi contengono misurazioni relative allo stesso esperimento, ma i dati sono sensibilmente più rumorosi. Ripetete la procedura di fit anche per questi dati (magari importando tutti i file \texttt{*.dat} utilizzando \texttt{glob}) e fate un plot delle varie stime di $\Omega$ e $\gamma$. Provate a estrapolare il valore reale di queste grandezze.
 
 \hphantom{ciao}
 
